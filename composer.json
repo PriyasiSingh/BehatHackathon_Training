@@ -1,0 +1,15 @@
+{
+  "require": {
+    "drupal/drupal-extension": "v4.2.1",
+    "symfony/yaml": "^4.4",
+    "symfony/event-dispatcher": "^4.4",
+    "symfony/console": "^4.4"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "require-dev": {
+    "behat/mink-extension": "^2.3",
+    "behat/mink": "^1.10"
+  }
+}

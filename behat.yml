@@ -1,0 +1,35 @@
+default:
+  suites:
+    default:
+      paths:
+        features: features
+        bootstrap: 'features/bootstrap'
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Drupal\MinkExtension:
+      #goutte: ~
+      selenium2: ~
+      browser_name: chrome
+      default_session: selenium2
+      base_url: http://my-drupal9-site.ddev.site:8080/
+      javascript_session: selenium2
+      files_path: "%paths.base%/media"
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      drupal:
+        drupal_root: '/Users/priyasisingh/Documents/Behat/LocalSetup/my-drupal9-site/web'
+      region_map:
+        footer: ".layout-footer"
+        header: ".layout-header"
+        tabs: ".layout-tabs"
+        content: ".region-content"
+        copyright: ".layout-bottom"
+      selectors:
+        success_message_selector: '.messages.messages--status'
+        error_message_selector: '.messages.messages--error'
